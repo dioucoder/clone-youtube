@@ -1,0 +1,197 @@
+main button[type="button"] {
+      background: var(--bg2-color);
+      color: var(--text-color);
+      padding: .8rem 1.8rem;
+      font-weight: var(--fw-500);
+      font-size: var(--fs-medium);
+      cursor: pointer;
+      border-radius: var(--radius-medium);
+}
+
+main .filter__buttons-container {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 60px;
+      justify-content: space-between;
+      white-space: nowrap;
+      overflow: hidden;
+      overflow-x: auto;
+      padding: 1rem;
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
+      background: var(--bg1-color);
+      color: var(--text-color);
+      box-shadow: var(--box);
+      z-index: 20;
+}
+
+main .filter__buttons-container::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+}
+
+
+main button.btnFilterActive {
+      background: hsl(0, 0%, 0%);
+      color: hsl(0, 0%, 100%);
+}
+
+main article {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+      padding-top: 3rem;
+}
+
+article figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-small);
+      background: var(--bg1-color);
+      padding: .5rem;
+      cursor: pointer;
+      box-shadow: var(--box);
+      max-width: 576px;
+}
+
+article figure.hide {
+      display: none;
+}
+
+article figure.show {
+      display: initial;
+      -webkit-animation: scalingFigure .2s cubic-bezier(0.47, 0, 0.745, 0.715);
+      animation: scalingFigure .2s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+@-webkit-keyframes scalingFigure {
+      0% {
+            transform: scale(.5);
+      }
+
+      100% {
+            transform: scale(1);
+      }
+}
+
+@keyframes scalingFigure {
+      0% {
+            transform: scale(.5);
+      }
+
+      100% {
+            transform: scale(1);
+      }
+}
+
+article .article__profil-container {
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
+      margin-top: 1.5rem;
+}
+
+article .article__profil-box {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border-radius: var(--radius-full);
+      border: .1px solid var(--border-search-on-focus);
+      padding: .2rem;
+      box-shadow: var(--box);
+      align-self: flex-start;
+}
+
+main .card-img-bg {
+      width: 100%;
+      height: auto;
+      position: relative;
+}
+
+main article img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: var(--radius-small);
+      transition: .2s linear;
+}
+
+article .article__profil-box img {
+      border-radius: var(--radius-full);
+}
+
+main article .descrp {
+      flex: 1;
+      text-align: left;
+      font-size: var(--fs-medium);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+}
+
+main article figure h4 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+}
+
+main article .ri-more-2-fill {
+      align-self: flex-start;
+      font-weight: var(--fw-900);
+      font-size: var(--fs-medium);
+      visibility: hidden;
+      opacity: 0;
+}
+
+main article .text-desc span,
+main article .text-desc p {
+      font-size: var(--fs-normal);
+      color: var(--color-title-profil);
+}
+
+main article .icons__on-over {
+      position: absolute;
+      top: 2.5rem;
+      right: .8rem;
+      row-gap: 2rem;
+      flex-direction: column;
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+}
+
+main figure:hover .ri-more-2-fill,
+main figure:hover .icons__on-over {
+      visibility: visible;
+      opacity: 1;
+}
+
+main figure:hover .card-img-bg img {
+      transform: scale(1.01);
+}
+
+main article .icons__on-over i {
+      width: 30px;
+      height: 30px;
+      background: var(--bg1-color);
+      color: var(--text-color);
+      display: grid;
+      place-items: center;
+      font-size: var(--fs-biggest);
+      border-radius: var(--radius-small);
+      cursor: pointer;
+}
+
+main figure .times__duration {
+      position: absolute;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      padding: .1rem .5rem;
+      background: var(--bg-time-duration);
+      color: white;
+      border-radius: var(--radius-small);
+      font-weight: var(--fw-900);
+      font-size: var(--fs-normal);
+}
